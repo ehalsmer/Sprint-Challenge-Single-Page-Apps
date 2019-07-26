@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {Grid} from 'semantic-ui-react';
+import CharacterCard from './CharacterCard';
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -22,7 +24,8 @@ export default function CharacterList() {
     <section className='character-list grid-view'>
       {characters.map((character, index)=>{
         return (
-          <h1>{character.name}</h1>
+          // <h1>{character.name}</h1>
+          <CharacterCard name={character.name} imageSrc={character.image} species={character.species} location={character.location.name} origin={character.origin.name} key={index}/>
         )})
       }
           {/* <h2>TODO: `array.map()` over your state here!</h2> */}

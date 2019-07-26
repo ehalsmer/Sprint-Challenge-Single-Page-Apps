@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import LocationCard from './LocationCard';
+import {Grid, Container} from 'semantic-ui-react';
 
 export default function LocationsList() {
     const [locations, setLocations] = useState([])
@@ -18,9 +20,18 @@ export default function LocationsList() {
 
 
     return (
-        locations.map((location, index)=>{
-            return <h1>{location.name}</h1>
-        }
-    ))
+        <Container style={containerStyle}>
+            {locations.map((location, index)=>{
+               return <LocationCard name={location.name} type={location.type} dimension={location.dimension} residents={location.residents}/>
+                // return <h1>{location.name}</h1>
+            }
+            )}
+        </Container>
+        )
+}
 
+const containerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
 }
