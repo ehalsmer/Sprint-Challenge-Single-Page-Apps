@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Card, Icon, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
-const CharacterCard = (props) => (
+const CharacterCard = props => (
   <Card>
     <Image src={props.imageSrc} wrapped ui={false} />
     <Card.Content>
@@ -11,17 +11,18 @@ const CharacterCard = (props) => (
         <span>{props.species}</span>
       </Card.Meta>
       <Card.Description>
-        Location: {props.location}<br/>
+        Location: {props.location}
+        <br />
         Origin: {props.origin}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <Link to='/episodes'>
-        <Icon name='user' />
+      <Link to="/episodes">
+        <Icon name="user" />
         Episodes
       </Link>
     </Card.Content>
   </Card>
-)
+);
 
-export default CharacterCard
+export default CharacterCard;
