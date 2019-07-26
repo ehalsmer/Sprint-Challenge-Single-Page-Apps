@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Grid } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import CharacterCard from "./CharacterCard";
 
 export default function CharacterList() {
@@ -15,19 +15,21 @@ export default function CharacterList() {
 
   console.log(characters);
   return (
-    <section className="character-list grid-view">
-      {characters.map((character, index) => {
-        return (
-          <CharacterCard
-            name={character.name}
-            imageSrc={character.image}
-            species={character.species}
-            location={character.location.name}
-            origin={character.origin.name}
-            key={index}
-          />
-        );
-      })}
-    </section>
+<Container>
+      <section className="character-list grid-view">
+        {characters.map((character, index) => {
+          return (
+            <CharacterCard
+              name={character.name}
+              imageSrc={character.image}
+              species={character.species}
+              location={character.location.name}
+              origin={character.origin.name}
+              key={index}
+            />
+          );
+        })}
+      </section>
+</Container>
   );
 }
