@@ -38,3 +38,11 @@ header h1 {
   text-align: center;
 
 }
+
+.search-form {
+  margin: 20px 0px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
